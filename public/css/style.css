@@ -391,6 +391,11 @@ header .logoSection {
     float: left;
     margin-top: 6px;
 }
+
+header .logoSection a {
+    color: #ddd;
+    text-decoration: none;
+}
 header .menuSection {
     float: right;
 }

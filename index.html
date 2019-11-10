@@ -6,14 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
    <header>
        <nav>
            <div class="logoSection">
-               <h1>Lifestyle</h1>
-               <p>I am a web designer</p>
+               <a href="#">
+                   <h1>Lifestyle</h1>
+                   <p>I am a web designer</p>
+               </a>
+               
            </div>
 
             <div id="menuBar" onclick="myMenuFunction(this)">
@@ -32,10 +35,10 @@
                <div class="navBar">
                    <ul>
                        <li><a href="#">Home</a></li>
-                       <li><a href="#">About</a></li>
-                       <li><a href="#">Contact</a></li>
-                       <li><a href="#">Blog</a></li>
-                       <li><a href="#">Gallery</a></li>
+                       <li><a href="#aboutSection">About</a></li>
+                       <li><a href="#contactSection">Contact</a></li>
+                       <li><a href="#blogSection">Blog</a></li>
+                       <li><a href="#gallerySection">Gallery</a></li>
                    </ul>
                </div>
               
@@ -68,7 +71,7 @@
 
    <main>
        <section>
-           <div class="services">
+           <div class="services" id="aboutSection">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate repellat dolore veniam sint natus, sunt voluptatibus. Fugiat illum velit incidunt?</p>
                 <button>Contact us</button>
             </div>
@@ -98,7 +101,7 @@
                 </div>
             </div>
 
-            <div class=" card-section">
+            <div class=" card-section" id="gallerySection">
                 <div class="card-item">
                     <div class="card-header">
                         <img src="/images/APON  TELE  COM (718).JPG" alt="">
@@ -136,7 +139,7 @@
             <!-- </div> -->
 
             <!-- <div class="row card-section"> -->
-                    <div class="card-item">
+                    <div class="card-item" >
                         <div class="card-header">
                             <img src="/images/APON  TELE  COM (721).JPG" alt="">
                         </div>
@@ -172,7 +175,7 @@
        </section>
 
        <footer>
-           <div class="row footer-contact" >
+           <div class="row footer-contact"  id="contactSection">
                 <div class="col-1-of-4">
                     <h2>Contact Us</h2>
                     <ul>
@@ -193,7 +196,7 @@
                         <li><a href="#">Faruk Portfolio</a></li>
                     </ul>
                 </div>
-                <div class="col-1-of-4">
+                <div class="col-1-of-4" id="blogSection">
                     <h2>From The Blog</h2>
                     <h4>The Blog Title</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et accusamus voluptatibus commodi esse ad incidunt suscipit? Culpa earum optio molestias.</p>
@@ -241,6 +244,6 @@
        </footer>
     </main>
  
-    <script src="/script.js"></script>
+    <script src="/scripts/script.js"></script>
 </body>
 </html>
