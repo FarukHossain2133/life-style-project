@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        :root {
+            --gutter-horizontal : 10px;
+            --gutter-vertical: 10px;
+            --grid-width: 1100px;
+        }
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            border: 0;
+            margin: 0;
+        }
+        body {
+            background-color: #aaa;
+            color:white ;
+            font-size: 20px;
+        }
+
+        .div1 {
+            background-color: red;
+        }
+        .div2 {
+            background-color: green;
+        }
+        .div3 {
+            background-color: blue;
+        } 
+
+
+    .row {
+        max-width: var(--grid-width);
+        margin: 0 auto;
+        overflow: auto;
+    }
+
+    @media only screen and (max-width: 600px) {
+        [class^="col-"] {
+        width: 100% !important;
+        display: block;
+        margin-bottom: var(--gutter-vertical);
+        }
+
+    }
+    
+    .row:not(:last-child){
+        margin-bottom: var(--gutter-vertical);
+    }
+
+    [class^="col-"] {
+        float: left;
+    }
+
+    [class^="col-"]:not(:last-child){
+        margin-right: var(--gutter-horizontal);
+    }
+
+    .col-1-of-2 {
+        width: calc((100% - var(--gutter-horizontal)) / 2);  
+    }
+    .col-1-of-3 {
+        width: calc((100% - (2 * var(--gutter-horizontal))) / 3);
+    }
+    .col-2-of-3 {
+        width: calc((2 * ((100% - (2 * var(--gutter-horizontal))) / 3) + var(--gutter-horizontal)));
+    }
+     .col-1-of-4 {
+        width: calc((100% - (3 * var(--gutter-horizontal))) / 4);
+    }
+
+      .col-2-of-4 {
+        width: calc((2 * (100% - (3 * var(--gutter-horizontal))) / 4) +  var(--gutter-horizontal));
+    }
+    .col-3-of-4 {
+        width: calc((3 * (100% - (3 * var(--gutter-horizontal))) / 4) + 2 * var(--gutter-horizontal));
+    }
+
+
+    .gradient {
+  position: relative;
+  background-image: linear-gradient(
+    to right,
+    hsl(211, 100%, 50%),
+    hsl(179, 100%, 30%)
+  );
+  z-index: 1;
+}
+
+.gradient::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(
+    to bottom,
+    hsl(344, 100%, 50%),
+    hsl(31, 100%, 40%)
+  );
+  z-index: -1;
+  transition: opacity 0.5s linear;
+  opacity: 0;
+}
+
+.gradient:hover::before {
+  opacity: 1;
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Dosis:300,400);
+
+body {
+  background-color:#222;
+}
+
+.wrapper {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left:50%;
+  -webkit-transform: translate(-50%,-50%);
+}
+
+h1 a {
+  color: #fff;
+  font-size: 2em;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  font-family: 'Dosis', sans-serif;
+}
+
+/*effect-underline*/
+a.effect-underline:after {
+	content: '';
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  height: 1em;
+  width: 100%;
+  border-bottom: 1px solid;
+  margin-top: 10px;
+  opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: scale(0,1);
+	transform: scale(0,1);
+}
+
+a.effect-underline:hover:after {
+  opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+/*effect-box*/
+a.effect-box:after,
+a.effect-box:before {
+	content: '';
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  height: 1em;
+  width: 100%;
+  margin-top: 10px;
+  opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	
+}
+
+a.effect-box:before {
+  border-left: 1px solid;
+  border-right: 1px solid;
+  -webkit-transform: scale(1,0);
+	transform: scale(1,0);
+}
+
+a.effect-box:after {
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  -webkit-transform: scale(0,1);
+	transform: scale(0,1);
+}
+
+a.effect-box:hover:after,
+a.effect-box:hover:before {
+  opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+/* effect-shine */
+a.effect-shine:hover {
+  -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+  -webkit-mask-size: 200%;
+  animation: shine 2s infinite;
+}
+
+@-webkit-keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+  
+  to {
+    -webkit-mask-position: -50%;
+  }
+}
+
+
+
+    </style>
+        
+</head>
+<body>
+    
+    <div class="row">
+        <div class="col-1-of-3 div1">
+            div1  
+        </div>
+        <div class="col-3-of-3 div2">
+            div2
+        </div>
+    </div>     
+    
+        <div class="row" >
+            <div class="col-1-of-3 div1">
+                div1  
+            </div>
+            <div class="col-1-of-3 div2">
+                div2
+            </div>
+            <div class="col-1-of-3 div3">
+                 div3
+            </div>
+           
+        </div>  
+        
+        
+        <div class="gradient">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non commodi, ex, veniam delectus quibusdam harum repellat voluptatum tenetur, ut magni rem ea distinctio ab aliquam laudantium excepturi deleniti dolore voluptate.</div>
+
+
+
+        <div class="wrapper">
+            <h1 align="center"><a href="#" class="effect-underline">underline</a></h1>
+            <h1 align="center"><a href="#" class="effect-box">box</a></h1>
+            <h1 align="center"><a href="#" class="effect-shine">shine</a></h1>
+        </div>
+</body>
+</html>
